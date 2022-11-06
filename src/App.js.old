@@ -1,0 +1,123 @@
+// import Welcome from "./1_Components/welcome";
+
+import ReactBootstrap from "./10_ReactBootstrap/ReactBootstrap";
+import MSI from "./1_Components/BT_MSI/MSI";
+import ClassJSX from "./2_JSX/ClassJSX";
+import FunctionJSX from "./2_JSX/FunctionJSX";
+import Events from "./3_Events/Events";
+import EventsClass from "./3_Events/EventsClass";
+import Conditional from "./4_Conditional/Conditional";
+import Props from "./5_Props/Props";
+import Map from "./6_Map/Map.jsx"
+import State from "./7_States/State";
+import Lifecycle from "./8_Lifecycle/Lifecycle";
+import Composition from "./9_Composition/Composition";
+import ShoppingCart from "./BT_ShoppingCart/ShoppingCart";
+import ShoesShop from "./BT_ShosesShop_B3/ShoesShop";
+import UserManagement from "./BT_UserManagement/UserManagement";
+import Styles from "./11_Styles/Styles.jsx"
+import UseState from "./12_Hooks/UseState";
+import UseEffect from "./12_Hooks/UseEffect";
+import Shop from "./BT_ShoppingHooks/Shop"
+import UseRef from "./12_Hooks/UseRef";
+import CustomHooks from "./13_CustomHooks/CustomHooks";
+import Redux from "./14_Redux/Redux";
+import BauCua from "./BT_BauCua/BauCua";
+import ReduxThunk from "./15_ReduxThunk/ReduxThunk";
+
+// import Home from "./1_Components/BT_Home/Home";
+
+// Component là 1 function return về jsx, mô tả những gì sẽ hiển thị ra giao diện
+// Tên component bắt buộc phải viết hoa chữ cái đầu
+function App() {
+  // JSX: Javascript + XML - Là một cú pháp đặc biệt cho phép viết html bên trong javascript
+  /*
+  Một số nguyên tắc khi viết JSX:
+  - class -> className
+  - for -> htmlFor
+  - các thuộc tính phải viết theo dạng camelCase. VD: tab-tabIndex
+  */
+
+  return (
+    // <div className="App">
+    //   <h1>Hello ReactJS</h1>
+    //   <Welcome />
+    //   <Welcome />
+    // </div>
+
+    // 1.Bài tập Component B1
+    // Bài tập Home
+    // <Home />
+
+    // Bài tạp MSI B2
+    // <MSI />
+
+    //2. JSX
+    // <>
+    //   <FunctionJSX />
+    //   <ClassJSX />
+    // </>
+
+    //3.Events
+    // <>
+    // <Events />
+    // <EventsClass />
+    // </>
+    
+    //4.Conditional
+    // <Conditional />
+
+    // 5.Props
+    // <Props />
+
+    // 6. Map 
+    // <Map />
+
+    // Bài tập ShoesShop B3
+    // <ShoesShop />
+
+    // 7. State
+    // <State message="Hello BC32" />
+
+    // BT ShoppingCart
+    // <ShoppingCart />
+
+    //8. Lifecycle
+    // <Lifecycle />
+
+    //BT UserManagement
+    // <UserManagement />
+
+    // 9. Composition
+    // <Composition />
+
+    // 10. ReactBootstrap
+    // <ReactBootstrap />
+
+    // 11. Styles
+    // <Styles />
+
+    // 12. Hook
+    // <UseState />
+    // <UseEffect />
+    // <UseRef />
+
+    //  BT_ShoppingHook
+    // <Shop />
+
+    // 13. CustomHooks
+    // <CustomHooks />
+
+    // 14. Redux
+    // <Redux />
+
+    // BT_BauCua
+    // <BauCua />
+
+    // 15. Redux thunk
+    <ReduxThunk />
+
+  );
+}
+
+export default App;

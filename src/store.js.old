@@ -1,0 +1,74 @@
+// file cấu hình store
+import { combineReducers, createStore, applyMiddleware, compose } from "redux";
+// redux-thunk là một thư viện middleware của redux. giúp viết các async actions
+import thunk from "redux-thunk"
+import countReducer from "./reducers/countReducer";
+import messageReducer from "./reducers/messageReducer";
+import baucuaReducer from "./reducers/baucuaReducer";
+import movieReducer from "./reducers/movieReducer";
+
+// combineReducers: hàm kết hợp reducer con thành reducer tổng
+const reducer = combineReducers({
+  count: countReducer,
+  message: messageReducer,
+  baucua: baucuaReducer,
+  movie: movieReducer,
+});
+
+// key của các reducer con sẽ được khai báo là key trong object state
+// state = {count: 0, message: ""}
+
+// redux nhận vào 2 tham số:
+// - Giá trị hiện tại của state trong store
+// - object action dùng để mô tả ta muốn thay đổi state như thế nào
+// reducer sẽ tự động được thực thi khi store được khởi tạo và mỗi khi ta dispatch 1 action
+// const inititalState = {
+//   count: 0,
+//   message: "Hello redux",
+// };
+// const reducer = (state = inititalState, action) => {
+//   switch (action.type) {
+//     case "increase_count":
+//       return {
+//         ...state,
+//         count: state.count + 1,
+//       };
+//     case "decrease_count":
+//       return {
+//         ...state,
+//         count: state.count - 1,
+//       };
+
+//     case "change_message":
+//         return {
+//             ...state,
+//             message: action.data,
+//         }
+//     default:
+//       return state;
+//   }
+// };
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const middlewares = applyMiddleware(thunk);
+
+const store = createStore(
+  reducer,
+  composeEnhancers(middlewares)
+);
+export default store;
+
+// ============================ Ví dụ sử dụng redux =====================
+// subscribe: Hàm nhận vào tham số là 1 callback function, callback sẽ được gọi tới sau khi state bị thay đổi
+// store.subscribe(() => {
+//     console.log("redux state khi thay đổi", store.getState());
+// })
+
+// // getState() : Hàm dùng để lấy giá trị state của store
+// console.log("redux state:", store.getState());
+// // dispatch() : Hàm dùng để gửi 1 action vào store để cập nhật state
+// // action là một object có 1 key bắt buộc là type dùng đề mô tả ta muốn thay đổi state như thế nào
+// store.dispatch({ type: "increase_count" });
+
+// // YC: thay đổi state của count -1
+// store.dispatch({ type: "decrease_count"});
